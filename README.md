@@ -1,4 +1,9 @@
 # Config
+### vimrc
+
+```
+cp .vimrc ~/.vimrc
+```
 
 ### i3
 file in `~/.config/i3/config`
