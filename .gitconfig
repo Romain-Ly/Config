@@ -1,0 +1,11 @@
+[user]
+    email = xxx@xxx.com
+    name = xxx
+[core]
+    editor = vim
+[alias]
+    st = status
+    co = checkout
+    dc = diff --cached
+    br = branch
+    cp = cherry-pick
