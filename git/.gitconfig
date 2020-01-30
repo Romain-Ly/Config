@@ -9,3 +9,4 @@
     dc = diff --cached
     br = branch
     cp = cherry-pick
+    lg = log --oneline --decorate
