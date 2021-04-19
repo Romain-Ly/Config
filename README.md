@@ -11,7 +11,6 @@ file in `~/.config/i3/config`
 Shortcut :
 ```
 mod + shift +c
-mod + shift +c
 ```
 
 bash command
