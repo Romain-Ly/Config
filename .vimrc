@@ -1,3 +1,20 @@
+call plug#begin('~/.vim/plugged')
+
+" Plugin outside ~/.vim/plugged with post-update hook
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+
+Plug 'ctrlpvim/ctrlp.vim'
+
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+Plug 'airblade/vim-gitgutter'
+
+Plug 'tpope/vim-fugitive'
+
+call plug#end()
+
+
 " highlight trailing whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
@@ -17,3 +34,6 @@ match OverLength /\%81v.\+/
 " add a grey column ruler
 set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=lightgrey
+
+" tags
+:syntax on
