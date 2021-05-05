@@ -2,8 +2,7 @@ call plug#begin('~/.vim/plugged')
 
 " Plugin outside ~/.vim/plugged with post-update hook
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf.vim'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -11,6 +10,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 
 Plug 'tpope/vim-fugitive'
+
+Plug 'ntpeters/vim-better-whitespace'
 
 call plug#end()
 
@@ -37,3 +38,31 @@ highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 " tags
 :syntax on
+
+" fzf
+nmap <C-p> :GFiles<CR>
+
+if &term =~ '^screen'
+    " tmux will send xterm-style keys when its xterm-keys option is on
+    execute "set <xUp>=\e[1;*A"
+    execute "set <xDown>=\e[1;*B"
+    execute "set <xRight>=\e[1;*C"
+    execute "set <xLeft>=\e[1;*D"
+endif
+
+" move to left buffer
+map  <C-Left>   <C-w><Left>
+map! <C-Left>   <Esc> <C-w><Left>
+" move to right buffer
+map  <C-Right>  <C-w><Right>
+map! <C-Right>  <Esc> <C-w><Right>
+" move to buffer above
+map  <C-Up>     <C-w><Up>
+map! <C-Up>     <Esc> <C-w><Up>
+" move to buffer below
+map  <C-Down>   <C-w><Down>
+map! <C-Down>   <Esc> <C-w><Down>
+
+" highlight search
+set hlsearch
+:noremap <F4 :set hlsearch! hlsearch?<CR>
