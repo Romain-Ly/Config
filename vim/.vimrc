@@ -63,6 +63,27 @@ map! <C-Up>     <Esc> <C-w><Up>
 map  <C-Down>   <C-w><Down>
 map! <C-Down>   <Esc> <C-w><Down>
 
+
+" incsearch
+set incsearch
+
 " highlight search
 set hlsearch
-:noremap <F4 :set hlsearch! hlsearch?<CR>
+
+" toggke highlight search
+:noremap <F6> :set hlsearch! hlsearch?<CR>
+
+" highlight search without moving.
+:nnoremap <F8> :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
+
+" grep on the current word
+set grepprg=git\ grep\ -H\ -n
+map <F4> :gr! -w <cword><cr>
+" 1/any file on current dir
+:nnoremap gr :grep <cword> *<CR>
+" 2/any file of the files in the same dir of the current file
+:nnoremap Gr :grep <cword> %:p:h/*<CR>
+" 3/whole word + 1/
+:nnoremap gR :grep '\b<cword>\b' *<CR>
+" 4/whole whord + 2/
+:nnoremap GR :grep '\b<cword>\b' %:p:h/*<CR>
