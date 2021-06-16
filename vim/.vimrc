@@ -87,3 +87,9 @@ map <F4> :gr! -w <cword><cr>
 :nnoremap gR :grep '\b<cword>\b' *<CR>
 " 4/whole whord + 2/
 :nnoremap GR :grep '\b<cword>\b' %:p:h/*<CR>
+
+" delete trailing whitespaces
+:nnoremap <silent> <F5> :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
+
+" no new line at end of files
+:set nofixendofline
