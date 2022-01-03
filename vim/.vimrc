@@ -28,6 +28,8 @@ set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
 
+autocmd Filetype javascript setlocal ts=2 sw=2 expandtab
+
 " Highlight if column exceeds 80
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%81v.\+/
@@ -88,8 +90,13 @@ map <F4> :gr! -w <cword><cr>
 " 4/whole whord + 2/
 :nnoremap GR :grep '\b<cword>\b' %:p:h/*<CR>
 
+
 " delete trailing whitespaces
 :nnoremap <silent> <F5> :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
 
 " no new line at end of files
 :set nofixendofline
+
+" Show tab characters
+set list
+set listchars=tab:>-
