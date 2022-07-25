@@ -1,3 +1,3 @@
 ```
-cp ./zshrc ~/.
+cp .zshrc ~/.
 ```
