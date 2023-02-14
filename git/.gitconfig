@@ -10,3 +10,5 @@
     br = branch
     cp = cherry-pick
     lg = log --oneline --decorate
+[commit]
+    gpgsign = true
